@@ -1,0 +1,876 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.8.10 on win32)" generated="20231008 23:44:02.272" rpa="false" schemaversion="4">
+<suite id="s1" name="Online-Movie-Ticket-Booking-System" source="C:\Users\Nithya Yamasinghe\Downloads\online-movie-ticket-booking-system-automated-testing\online-movie-ticket-booking-system.robot">
+<test id="s1-t1" name="Go to Website" line="8">
+<kw name="Open Website" library="online-movie-ticket-booking-system-resources">
+<doc>This verify that user is able to open the correct URL</doc>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5 second</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231008 23:44:05.392" endtime="20231008 23:44:05.392"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${SiteUrl}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231008 23:44:05.393" level="INFO">Opening browser 'Chrome' to base url 'http://127.0.0.1:8000/admin/login/'.</msg>
+<status status="PASS" starttime="20231008 23:44:05.392" endtime="20231008 23:44:27.614"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231008 23:44:27.614" endtime="20231008 23:44:28.344"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Log in | Django site admin</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231008 23:44:28.864" level="INFO">Page title is 'Log in | Django site admin'.</msg>
+<status status="PASS" starttime="20231008 23:44:28.344" endtime="20231008 23:44:28.864"/>
+</kw>
+<status status="PASS" starttime="20231008 23:44:05.391" endtime="20231008 23:44:28.864"/>
+</kw>
+<status status="PASS" starttime="20231008 23:44:05.390" endtime="20231008 23:44:28.865"/>
+</test>
+<test id="s1-t2" name="Admin Sign In" line="11">
+<kw name="Input Username" library="online-movie-ticket-booking-system-resources">
+<arg>${Username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>username</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:44:28.868" level="INFO">Typing text 'nithyayamasinghemovies@gmail.com' into text field 'username'.</msg>
+<status status="PASS" starttime="20231008 23:44:28.867" endtime="20231008 23:44:30.540"/>
+</kw>
+<status status="PASS" starttime="20231008 23:44:28.867" endtime="20231008 23:44:30.540"/>
+</kw>
+<kw name="Input User Password" library="online-movie-ticket-booking-system-resources">
+<arg>${Password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:44:30.542" level="INFO">Typing text 'abc@123' into text field 'password'.</msg>
+<status status="PASS" starttime="20231008 23:44:30.541" endtime="20231008 23:44:32.191"/>
+</kw>
+<status status="PASS" starttime="20231008 23:44:30.541" endtime="20231008 23:44:32.191"/>
+</kw>
+<kw name="Click Admin Sign In" library="online-movie-ticket-booking-system-resources">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Log in</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 23:44:32.193" level="INFO">Clicking button 'Log in'.</msg>
+<status status="PASS" starttime="20231008 23:44:32.192" endtime="20231008 23:44:36.646"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Site administration</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:44:37.700" level="INFO">Current page contains text 'Site administration'.</msg>
+<status status="PASS" starttime="20231008 23:44:36.646" endtime="20231008 23:44:37.700"/>
+</kw>
+<status status="PASS" starttime="20231008 23:44:32.192" endtime="20231008 23:44:37.700"/>
+</kw>
+<status status="PASS" starttime="20231008 23:44:28.866" endtime="20231008 23:44:37.700"/>
+</test>
+<test id="s1-t3" name="View Movies List" line="16">
+<kw name="View Movies" library="online-movie-ticket-booking-system-resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Movies</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231008 23:44:37.703" level="INFO">Clicking link 'Movies'.</msg>
+<status status="PASS" starttime="20231008 23:44:37.703" endtime="20231008 23:44:39.963"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Select movie to change</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:44:41.010" level="INFO">Current page contains text 'Select movie to change'.</msg>
+<status status="PASS" starttime="20231008 23:44:39.963" endtime="20231008 23:44:41.010"/>
+</kw>
+<status status="PASS" starttime="20231008 23:44:37.702" endtime="20231008 23:44:41.010"/>
+</kw>
+<status status="PASS" starttime="20231008 23:44:37.702" endtime="20231008 23:44:41.011"/>
+</test>
+<test id="s1-t4" name="Add New Movie" line="19">
+<kw name="Create New Movie Entry" library="online-movie-ticket-booking-system-resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Add movie</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231008 23:44:41.015" level="INFO">Clicking link 'Add movie'.</msg>
+<status status="PASS" starttime="20231008 23:44:41.014" endtime="20231008 23:44:42.970"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Add movie</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:44:44.010" level="INFO">Current page contains text 'Add movie'.</msg>
+<status status="PASS" starttime="20231008 23:44:42.970" endtime="20231008 23:44:44.010"/>
+</kw>
+<status status="PASS" starttime="20231008 23:44:41.013" endtime="20231008 23:44:44.010"/>
+</kw>
+<kw name="Enter Movie Information and Save" library="online-movie-ticket-booking-system-resources">
+<kw name="Create Movie Information and Save" library="online-movie-ticket-booking-system-resources">
+<arg>Oppenheimer</arg>
+<arg>Cilian Murphy</arg>
+<arg>Christopher Nolan</arg>
+<arg>English</arg>
+<arg>120</arg>
+<arg>U</arg>
+<arg>9</arg>
+<arg>https://www.youtube.com/watch?v=uYPbbksJxIg</arg>
+<arg>C:/Users/Nithya \Yamasinghe/Downloads/online-movie-ticket-booking-system-automated-testing/oppenheimerhd.jpg</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name</arg>
+<arg>${Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:44:44.014" level="INFO">Typing text 'Oppenheimer' into text field 'name'.</msg>
+<status status="PASS" starttime="20231008 23:44:44.012" endtime="20231008 23:44:45.631"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>cast</arg>
+<arg>${Cast}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:44:45.632" level="INFO">Typing text 'Cilian Murphy' into text field 'cast'.</msg>
+<status status="PASS" starttime="20231008 23:44:45.631" endtime="20231008 23:44:47.306"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>director</arg>
+<arg>${Director}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:44:47.307" level="INFO">Typing text 'Christopher Nolan' into text field 'director'.</msg>
+<status status="PASS" starttime="20231008 23:44:47.306" endtime="20231008 23:44:48.983"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>language</arg>
+<arg>${Language}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20231008 23:44:48.984" level="INFO">Selecting options from selection list 'language' by label English.</msg>
+<status status="PASS" starttime="20231008 23:44:48.983" endtime="20231008 23:44:52.668"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>run_length</arg>
+<arg>${Run Length}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:44:52.669" level="INFO">Typing text '120' into text field 'run_length'.</msg>
+<status status="PASS" starttime="20231008 23:44:52.668" endtime="20231008 23:44:54.315"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>certificate</arg>
+<arg>${Certficate}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20231008 23:44:54.316" level="INFO">Selecting options from selection list 'certificate' by label U.</msg>
+<status status="PASS" starttime="20231008 23:44:54.315" endtime="20231008 23:44:57.996"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>popularity_index</arg>
+<arg>${Popularity Index}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:44:57.997" level="INFO">Typing text '9' into text field 'popularity_index'.</msg>
+<status status="PASS" starttime="20231008 23:44:57.996" endtime="20231008 23:44:59.607"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>trailer</arg>
+<arg>${Trailer}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:44:59.608" level="INFO">Typing text 'https://www.youtube.com/watch?v=uYPbbksJxIg' into text field 'trailer'.</msg>
+<status status="PASS" starttime="20231008 23:44:59.607" endtime="20231008 23:45:01.265"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>image</arg>
+<arg>${Image}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20231008 23:45:01.266" level="INFO">Sending C:\Users\Nithya Yamasinghe\Downloads\online-movie-ticket-booking-system-automated-testing\oppenheimerhd.jpg to browser.</msg>
+<status status="PASS" starttime="20231008 23:45:01.265" endtime="20231008 23:45:02.339"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Save</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:02.340" level="INFO">Clicking button 'Save'.</msg>
+<status status="PASS" starttime="20231008 23:45:02.339" endtime="20231008 23:45:04.607"/>
+</kw>
+<status status="PASS" starttime="20231008 23:44:44.011" endtime="20231008 23:45:04.607"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Select movie to change</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:45:05.634" level="INFO">Current page contains text 'Select movie to change'.</msg>
+<status status="PASS" starttime="20231008 23:45:04.607" endtime="20231008 23:45:05.634"/>
+</kw>
+<status status="PASS" starttime="20231008 23:44:44.011" endtime="20231008 23:45:05.634"/>
+</kw>
+<status status="PASS" starttime="20231008 23:44:41.012" endtime="20231008 23:45:05.635"/>
+</test>
+<test id="s1-t5" name="Update Existing Movie" line="23">
+<kw name="Change Existing Movie Details" library="online-movie-ticket-booking-system-resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Oppenheimer</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:05.638" level="INFO">Clicking link 'Oppenheimer'.</msg>
+<status status="PASS" starttime="20231008 23:45:05.637" endtime="20231008 23:45:07.420"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Change movie</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:45:08.445" level="INFO">Current page contains text 'Change movie'.</msg>
+<status status="PASS" starttime="20231008 23:45:07.420" endtime="20231008 23:45:08.445"/>
+</kw>
+<status status="PASS" starttime="20231008 23:45:05.637" endtime="20231008 23:45:08.445"/>
+</kw>
+<kw name="Update Movie Information and Save" library="online-movie-ticket-booking-system-resources">
+<kw name="Create Movie Information and Save" library="online-movie-ticket-booking-system-resources">
+<arg>Oppenheimer</arg>
+<arg>Cilian Murphy, Emily Blunt</arg>
+<arg>Christopher Nolan</arg>
+<arg>English</arg>
+<arg>120</arg>
+<arg>U</arg>
+<arg>10</arg>
+<arg>https://www.youtube.com/watch?v=uYPbbksJxIg</arg>
+<arg>C:/Users/Nithya \Yamasinghe/Downloads/online-movie-ticket-booking-system-automated-testing/oppenheimerhd.jpg</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name</arg>
+<arg>${Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:08.447" level="INFO">Typing text 'Oppenheimer' into text field 'name'.</msg>
+<status status="PASS" starttime="20231008 23:45:08.447" endtime="20231008 23:45:10.142"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>cast</arg>
+<arg>${Cast}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:10.143" level="INFO">Typing text 'Cilian Murphy, Emily Blunt' into text field 'cast'.</msg>
+<status status="PASS" starttime="20231008 23:45:10.142" endtime="20231008 23:45:11.779"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>director</arg>
+<arg>${Director}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:11.780" level="INFO">Typing text 'Christopher Nolan' into text field 'director'.</msg>
+<status status="PASS" starttime="20231008 23:45:11.779" endtime="20231008 23:45:13.431"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>language</arg>
+<arg>${Language}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20231008 23:45:13.432" level="INFO">Selecting options from selection list 'language' by label English.</msg>
+<status status="PASS" starttime="20231008 23:45:13.431" endtime="20231008 23:45:16.019"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>run_length</arg>
+<arg>${Run Length}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:16.020" level="INFO">Typing text '120' into text field 'run_length'.</msg>
+<status status="PASS" starttime="20231008 23:45:16.019" endtime="20231008 23:45:17.659"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>certificate</arg>
+<arg>${Certficate}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20231008 23:45:17.660" level="INFO">Selecting options from selection list 'certificate' by label U.</msg>
+<status status="PASS" starttime="20231008 23:45:17.659" endtime="20231008 23:45:20.246"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>popularity_index</arg>
+<arg>${Popularity Index}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:20.247" level="INFO">Typing text '10' into text field 'popularity_index'.</msg>
+<status status="PASS" starttime="20231008 23:45:20.246" endtime="20231008 23:45:21.867"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>trailer</arg>
+<arg>${Trailer}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:21.868" level="INFO">Typing text 'https://www.youtube.com/watch?v=uYPbbksJxIg' into text field 'trailer'.</msg>
+<status status="PASS" starttime="20231008 23:45:21.867" endtime="20231008 23:45:23.529"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>image</arg>
+<arg>${Image}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20231008 23:45:23.530" level="INFO">Sending C:\Users\Nithya Yamasinghe\Downloads\online-movie-ticket-booking-system-automated-testing\oppenheimerhd.jpg to browser.</msg>
+<status status="PASS" starttime="20231008 23:45:23.529" endtime="20231008 23:45:24.585"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Save</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:24.586" level="INFO">Clicking button 'Save'.</msg>
+<status status="PASS" starttime="20231008 23:45:24.585" endtime="20231008 23:45:27.067"/>
+</kw>
+<status status="PASS" starttime="20231008 23:45:08.446" endtime="20231008 23:45:27.067"/>
+</kw>
+<status status="PASS" starttime="20231008 23:45:08.446" endtime="20231008 23:45:27.067"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Select movie to change</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:45:28.100" level="INFO">Current page contains text 'Select movie to change'.</msg>
+<status status="PASS" starttime="20231008 23:45:27.068" endtime="20231008 23:45:28.100"/>
+</kw>
+<status status="PASS" starttime="20231008 23:45:05.636" endtime="20231008 23:45:28.100"/>
+</test>
+<test id="s1-t6" name="Delete Existing Movie" line="28">
+<kw name="Remove Existing Movie" library="online-movie-ticket-booking-system-resources">
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@id="result_list"]/tbody/tr[1]/td/input</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:28.104" level="INFO">Selecting checkbox '//*[@id="result_list"]/tbody/tr[1]/td/input'.</msg>
+<status status="PASS" starttime="20231008 23:45:28.103" endtime="20231008 23:45:30.769"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>action</arg>
+<arg>Delete selected movies</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20231008 23:45:30.770" level="INFO">Selecting options from selection list 'action' by label Delete selected movies.</msg>
+<status status="PASS" starttime="20231008 23:45:30.769" endtime="20231008 23:45:34.390"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Go</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:34.391" level="INFO">Clicking button 'Go'.</msg>
+<status status="PASS" starttime="20231008 23:45:34.390" endtime="20231008 23:45:36.637"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Are you sure?</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:45:37.684" level="INFO">Current page contains text 'Are you sure?'.</msg>
+<status status="PASS" starttime="20231008 23:45:36.637" endtime="20231008 23:45:37.684"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Yes, I'm sure</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:37.685" level="INFO">Clicking button 'Yes, I'm sure'.</msg>
+<status status="PASS" starttime="20231008 23:45:37.684" endtime="20231008 23:45:39.447"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Select movie to change</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:45:40.475" level="INFO">Current page contains text 'Select movie to change'.</msg>
+<status status="PASS" starttime="20231008 23:45:39.447" endtime="20231008 23:45:40.475"/>
+</kw>
+<status status="PASS" starttime="20231008 23:45:28.103" endtime="20231008 23:45:40.475"/>
+</kw>
+<status status="PASS" starttime="20231008 23:45:28.102" endtime="20231008 23:45:40.475"/>
+</test>
+<test id="s1-t7" name="Add New Movie Again" line="31">
+<kw name="Create New Movie Entry" library="online-movie-ticket-booking-system-resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Add movie</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:40.479" level="INFO">Clicking link 'Add movie'.</msg>
+<status status="PASS" starttime="20231008 23:45:40.479" endtime="20231008 23:45:42.247"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Add movie</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:45:43.286" level="INFO">Current page contains text 'Add movie'.</msg>
+<status status="PASS" starttime="20231008 23:45:42.247" endtime="20231008 23:45:43.286"/>
+</kw>
+<status status="PASS" starttime="20231008 23:45:40.478" endtime="20231008 23:45:43.286"/>
+</kw>
+<kw name="Enter Movie Information and Save" library="online-movie-ticket-booking-system-resources">
+<kw name="Create Movie Information and Save" library="online-movie-ticket-booking-system-resources">
+<arg>Oppenheimer</arg>
+<arg>Cilian Murphy</arg>
+<arg>Christopher Nolan</arg>
+<arg>English</arg>
+<arg>120</arg>
+<arg>U</arg>
+<arg>9</arg>
+<arg>https://www.youtube.com/watch?v=uYPbbksJxIg</arg>
+<arg>C:/Users/Nithya \Yamasinghe/Downloads/online-movie-ticket-booking-system-automated-testing/oppenheimerhd.jpg</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name</arg>
+<arg>${Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:43.288" level="INFO">Typing text 'Oppenheimer' into text field 'name'.</msg>
+<status status="PASS" starttime="20231008 23:45:43.288" endtime="20231008 23:45:44.884"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>cast</arg>
+<arg>${Cast}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:44.885" level="INFO">Typing text 'Cilian Murphy' into text field 'cast'.</msg>
+<status status="PASS" starttime="20231008 23:45:44.884" endtime="20231008 23:45:46.517"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>director</arg>
+<arg>${Director}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:46.518" level="INFO">Typing text 'Christopher Nolan' into text field 'director'.</msg>
+<status status="PASS" starttime="20231008 23:45:46.517" endtime="20231008 23:45:48.172"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>language</arg>
+<arg>${Language}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20231008 23:45:48.173" level="INFO">Selecting options from selection list 'language' by label English.</msg>
+<status status="PASS" starttime="20231008 23:45:48.172" endtime="20231008 23:45:51.819"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>run_length</arg>
+<arg>${Run Length}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:51.820" level="INFO">Typing text '120' into text field 'run_length'.</msg>
+<status status="PASS" starttime="20231008 23:45:51.819" endtime="20231008 23:45:53.431"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>certificate</arg>
+<arg>${Certficate}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20231008 23:45:53.432" level="INFO">Selecting options from selection list 'certificate' by label U.</msg>
+<status status="PASS" starttime="20231008 23:45:53.431" endtime="20231008 23:45:57.100"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>popularity_index</arg>
+<arg>${Popularity Index}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:57.101" level="INFO">Typing text '9' into text field 'popularity_index'.</msg>
+<status status="PASS" starttime="20231008 23:45:57.100" endtime="20231008 23:45:58.709"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>trailer</arg>
+<arg>${Trailer}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:45:58.710" level="INFO">Typing text 'https://www.youtube.com/watch?v=uYPbbksJxIg' into text field 'trailer'.</msg>
+<status status="PASS" starttime="20231008 23:45:58.709" endtime="20231008 23:46:00.408"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>image</arg>
+<arg>${Image}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20231008 23:46:00.410" level="INFO">Sending C:\Users\Nithya Yamasinghe\Downloads\online-movie-ticket-booking-system-automated-testing\oppenheimerhd.jpg to browser.</msg>
+<status status="PASS" starttime="20231008 23:46:00.408" endtime="20231008 23:46:01.464"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Save</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:01.465" level="INFO">Clicking button 'Save'.</msg>
+<status status="PASS" starttime="20231008 23:46:01.464" endtime="20231008 23:46:03.273"/>
+</kw>
+<status status="PASS" starttime="20231008 23:45:43.287" endtime="20231008 23:46:03.273"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Select movie to change</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:46:04.309" level="INFO">Current page contains text 'Select movie to change'.</msg>
+<status status="PASS" starttime="20231008 23:46:03.274" endtime="20231008 23:46:04.309"/>
+</kw>
+<status status="PASS" starttime="20231008 23:45:43.287" endtime="20231008 23:46:04.309"/>
+</kw>
+<status status="PASS" starttime="20231008 23:45:40.477" endtime="20231008 23:46:04.310"/>
+</test>
+<test id="s1-t8" name="Go to Home" line="35">
+<kw name="Go to Home Page" library="online-movie-ticket-booking-system-resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Home</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:04.312" level="INFO">Clicking link 'Home'.</msg>
+<status status="PASS" starttime="20231008 23:46:04.312" endtime="20231008 23:46:06.129"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:04.312" endtime="20231008 23:46:06.129"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:04.311" endtime="20231008 23:46:06.130"/>
+</test>
+<test id="s1-t9" name="View Users List" line="38">
+<kw name="View Users" library="online-movie-ticket-booking-system-resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Users</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:06.133" level="INFO">Clicking link 'Users'.</msg>
+<status status="PASS" starttime="20231008 23:46:06.132" endtime="20231008 23:46:07.963"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:06.132" endtime="20231008 23:46:07.963"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:06.131" endtime="20231008 23:46:07.964"/>
+</test>
+<test id="s1-t10" name="Add New User" line="41">
+<kw name="Create New User Entry" library="online-movie-ticket-booking-system-resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Add user</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:07.967" level="INFO">Clicking link 'Add user'.</msg>
+<status status="PASS" starttime="20231008 23:46:07.966" endtime="20231008 23:46:09.756"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Add user</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:46:10.793" level="INFO">Current page contains text 'Add user'.</msg>
+<status status="PASS" starttime="20231008 23:46:09.756" endtime="20231008 23:46:10.793"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:07.966" endtime="20231008 23:46:10.793"/>
+</kw>
+<kw name="Enter User Information and Save" library="online-movie-ticket-booking-system-resources">
+<kw name="Create user Information and Save" library="online-movie-ticket-booking-system-resources">
+<arg>S370170nithya@gmail.com</arg>
+<arg>abc@12</arg>
+<arg>abc@12</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:10.795" level="INFO">Typing text 'S370170nithya@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20231008 23:46:10.794" endtime="20231008 23:46:12.451"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>password1</arg>
+<arg>${User Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:12.452" level="INFO">Typing text 'abc@12' into text field 'password1'.</msg>
+<status status="PASS" starttime="20231008 23:46:12.451" endtime="20231008 23:46:14.073"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>password2</arg>
+<arg>${Password Confirmation}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:14.074" level="INFO">Typing text 'abc@12' into text field 'password2'.</msg>
+<status status="PASS" starttime="20231008 23:46:14.073" endtime="20231008 23:46:15.697"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Save</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:15.698" level="INFO">Clicking button 'Save'.</msg>
+<status status="PASS" starttime="20231008 23:46:15.697" endtime="20231008 23:46:17.686"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Change user</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:46:18.714" level="INFO">Current page contains text 'Change user'.</msg>
+<status status="PASS" starttime="20231008 23:46:17.686" endtime="20231008 23:46:18.714"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@id="id_active"]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:18.715" level="INFO">Selecting checkbox '//*[@id="id_active"]'.</msg>
+<status status="PASS" starttime="20231008 23:46:18.714" endtime="20231008 23:46:20.806"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@id="id_staff"]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:20.807" level="INFO">Selecting checkbox '//*[@id="id_staff"]'.</msg>
+<status status="PASS" starttime="20231008 23:46:20.806" endtime="20231008 23:46:23.448"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Save</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:23.449" level="INFO">Clicking button 'Save'.</msg>
+<status status="PASS" starttime="20231008 23:46:23.448" endtime="20231008 23:46:25.260"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Select user to change</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:46:26.295" level="INFO">Current page contains text 'Select user to change'.</msg>
+<status status="PASS" starttime="20231008 23:46:25.260" endtime="20231008 23:46:26.295"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:10.794" endtime="20231008 23:46:26.295"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Select user to change</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:46:27.321" level="INFO">Current page contains text 'Select user to change'.</msg>
+<status status="PASS" starttime="20231008 23:46:26.295" endtime="20231008 23:46:27.321"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:10.793" endtime="20231008 23:46:27.321"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:07.965" endtime="20231008 23:46:27.322"/>
+</test>
+<test id="s1-t11" name="Update Existing User" line="45">
+<kw name="Change Existing User Details" library="online-movie-ticket-booking-system-resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>S370170nithya@gmail.com</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:27.325" level="INFO">Clicking link 'S370170nithya@gmail.com'.</msg>
+<status status="PASS" starttime="20231008 23:46:27.325" endtime="20231008 23:46:29.107"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Change user</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:46:30.135" level="INFO">Current page contains text 'Change user'.</msg>
+<status status="PASS" starttime="20231008 23:46:29.107" endtime="20231008 23:46:30.135"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:27.324" endtime="20231008 23:46:30.135"/>
+</kw>
+<kw name="Update User Information and Save" library="online-movie-ticket-booking-system-resources">
+<kw name="Create Update User Information and Save" library="online-movie-ticket-booking-system-resources">
+<arg>S370170nithya2@gmail.com</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:30.137" level="INFO">Typing text 'S370170nithya2@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20231008 23:46:30.136" endtime="20231008 23:46:31.783"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@id="id_active"]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:31.784" level="INFO">Selecting checkbox '//*[@id="id_active"]'.</msg>
+<status status="PASS" starttime="20231008 23:46:31.783" endtime="20231008 23:46:33.864"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@id="id_staff"]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:33.865" level="INFO">Selecting checkbox '//*[@id="id_staff"]'.</msg>
+<status status="PASS" starttime="20231008 23:46:33.864" endtime="20231008 23:46:35.932"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@id="id_admin"]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:35.933" level="INFO">Selecting checkbox '//*[@id="id_admin"]'.</msg>
+<status status="PASS" starttime="20231008 23:46:35.932" endtime="20231008 23:46:38.561"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Save</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:38.562" level="INFO">Clicking button 'Save'.</msg>
+<status status="PASS" starttime="20231008 23:46:38.561" endtime="20231008 23:46:40.378"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:30.136" endtime="20231008 23:46:40.378"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:30.136" endtime="20231008 23:46:40.378"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Select user to change</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:46:41.406" level="INFO">Current page contains text 'Select user to change'.</msg>
+<status status="PASS" starttime="20231008 23:46:40.379" endtime="20231008 23:46:41.406"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:27.324" endtime="20231008 23:46:41.407"/>
+</test>
+<test id="s1-t12" name="Delete Existing User" line="50">
+<kw name="Remove Existing User" library="online-movie-ticket-booking-system-resources">
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@id="result_list"]/tbody/tr[3]/td[1]/input</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:41.410" level="INFO">Selecting checkbox '//*[@id="result_list"]/tbody/tr[3]/td[1]/input'.</msg>
+<status status="PASS" starttime="20231008 23:46:41.409" endtime="20231008 23:46:44.046"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>action</arg>
+<arg>Delete selected users</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20231008 23:46:44.047" level="INFO">Selecting options from selection list 'action' by label Delete selected users.</msg>
+<status status="PASS" starttime="20231008 23:46:44.046" endtime="20231008 23:46:47.711"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Go</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:47.712" level="INFO">Clicking button 'Go'.</msg>
+<status status="PASS" starttime="20231008 23:46:47.711" endtime="20231008 23:46:49.954"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Are you sure?</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:46:50.977" level="INFO">Current page contains text 'Are you sure?'.</msg>
+<status status="PASS" starttime="20231008 23:46:49.954" endtime="20231008 23:46:50.977"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Yes, I'm sure</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:50.978" level="INFO">Clicking button 'Yes, I'm sure'.</msg>
+<status status="PASS" starttime="20231008 23:46:50.977" endtime="20231008 23:46:52.820"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Select user to change</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:46:53.844" level="INFO">Current page contains text 'Select user to change'.</msg>
+<status status="PASS" starttime="20231008 23:46:52.820" endtime="20231008 23:46:53.844"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:41.408" endtime="20231008 23:46:53.844"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:41.408" endtime="20231008 23:46:53.845"/>
+</test>
+<test id="s1-t13" name="Add New User Again" line="53">
+<kw name="Create New User Entry" library="online-movie-ticket-booking-system-resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Add user</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:53.848" level="INFO">Clicking link 'Add user'.</msg>
+<status status="PASS" starttime="20231008 23:46:53.847" endtime="20231008 23:46:55.583"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Add user</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:46:56.612" level="INFO">Current page contains text 'Add user'.</msg>
+<status status="PASS" starttime="20231008 23:46:55.583" endtime="20231008 23:46:56.612"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:53.847" endtime="20231008 23:46:56.612"/>
+</kw>
+<kw name="Enter User Information and Save" library="online-movie-ticket-booking-system-resources">
+<kw name="Create user Information and Save" library="online-movie-ticket-booking-system-resources">
+<arg>S370170nithya@gmail.com</arg>
+<arg>abc@12</arg>
+<arg>abc@12</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:56.615" level="INFO">Typing text 'S370170nithya@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20231008 23:46:56.614" endtime="20231008 23:46:58.266"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>password1</arg>
+<arg>${User Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:58.267" level="INFO">Typing text 'abc@12' into text field 'password1'.</msg>
+<status status="PASS" starttime="20231008 23:46:58.266" endtime="20231008 23:46:59.896"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>password2</arg>
+<arg>${Password Confirmation}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:46:59.897" level="INFO">Typing text 'abc@12' into text field 'password2'.</msg>
+<status status="PASS" starttime="20231008 23:46:59.896" endtime="20231008 23:47:01.517"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Save</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 23:47:01.518" level="INFO">Clicking button 'Save'.</msg>
+<status status="PASS" starttime="20231008 23:47:01.517" endtime="20231008 23:47:03.416"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Change user</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:47:04.449" level="INFO">Current page contains text 'Change user'.</msg>
+<status status="PASS" starttime="20231008 23:47:03.416" endtime="20231008 23:47:04.449"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@id="id_active"]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231008 23:47:04.450" level="INFO">Selecting checkbox '//*[@id="id_active"]'.</msg>
+<status status="PASS" starttime="20231008 23:47:04.449" endtime="20231008 23:47:06.533"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@id="id_staff"]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231008 23:47:06.534" level="INFO">Selecting checkbox '//*[@id="id_staff"]'.</msg>
+<status status="PASS" starttime="20231008 23:47:06.533" endtime="20231008 23:47:09.155"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Save</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 23:47:09.156" level="INFO">Clicking button 'Save'.</msg>
+<status status="PASS" starttime="20231008 23:47:09.155" endtime="20231008 23:47:10.965"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Select user to change</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:47:11.995" level="INFO">Current page contains text 'Select user to change'.</msg>
+<status status="PASS" starttime="20231008 23:47:10.965" endtime="20231008 23:47:11.995"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:56.613" endtime="20231008 23:47:11.995"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Select user to change</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 23:47:13.035" level="INFO">Current page contains text 'Select user to change'.</msg>
+<status status="PASS" starttime="20231008 23:47:11.995" endtime="20231008 23:47:13.035"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:56.613" endtime="20231008 23:47:13.035"/>
+</kw>
+<status status="PASS" starttime="20231008 23:46:53.846" endtime="20231008 23:47:13.036"/>
+</test>
+<test id="s1-t14" name="Go to Home Again" line="57">
+<kw name="Go to Home Page" library="online-movie-ticket-booking-system-resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Home</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231008 23:47:13.039" level="INFO">Clicking link 'Home'.</msg>
+<status status="PASS" starttime="20231008 23:47:13.038" endtime="20231008 23:47:14.804"/>
+</kw>
+<status status="PASS" starttime="20231008 23:47:13.038" endtime="20231008 23:47:14.804"/>
+</kw>
+<status status="PASS" starttime="20231008 23:47:13.037" endtime="20231008 23:47:14.805"/>
+</test>
+<test id="s1-t15" name="Admin Logout" line="60">
+<kw name="Admin User Log out" library="online-movie-ticket-booking-system-resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Log out</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231008 23:47:14.808" level="INFO">Clicking link 'Log out'.</msg>
+<status status="PASS" starttime="20231008 23:47:14.807" endtime="20231008 23:47:16.773"/>
+</kw>
+<status status="PASS" starttime="20231008 23:47:14.807" endtime="20231008 23:47:16.773"/>
+</kw>
+<status status="PASS" starttime="20231008 23:47:14.806" endtime="20231008 23:47:16.773"/>
+</test>
+<test id="s1-t16" name="Regular User Sign In" line="63">
+<kw name="Regular User Sign In" library="online-movie-ticket-booking-system-resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Sign In</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231008 23:47:16.776" level="INFO">Clicking link 'Sign In'.</msg>
+<status status="PASS" starttime="20231008 23:47:16.776" endtime="20231008 23:47:18.478"/>
+</kw>
+<status status="PASS" starttime="20231008 23:47:16.775" endtime="20231008 23:47:18.478"/>
+</kw>
+<kw name="Input Email" library="online-movie-ticket-booking-system-resources">
+<arg>${Username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:47:18.479" level="INFO">Typing text 'nithyayamasinghemovies@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20231008 23:47:18.479" endtime="20231008 23:47:20.103"/>
+</kw>
+<status status="PASS" starttime="20231008 23:47:18.478" endtime="20231008 23:47:20.103"/>
+</kw>
+<kw name="Input User Password" library="online-movie-ticket-booking-system-resources">
+<arg>${Password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:47:20.105" level="INFO">Typing text 'abc@123' into text field 'password'.</msg>
+<status status="PASS" starttime="20231008 23:47:20.104" endtime="20231008 23:47:21.750"/>
+</kw>
+<status status="PASS" starttime="20231008 23:47:20.104" endtime="20231008 23:47:21.750"/>
+</kw>
+<status status="PASS" starttime="20231008 23:47:16.775" endtime="20231008 23:47:21.750"/>
+</test>
+<test id="s1-t17" name="Search User Movies Screen" line="68">
+<kw name="User Movies Screen" library="online-movie-ticket-booking-system-resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Movies</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231008 23:47:21.753" level="INFO">Clicking link 'Movies'.</msg>
+<status status="PASS" starttime="20231008 23:47:21.753" endtime="20231008 23:47:23.897"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>q</arg>
+<arg>opp</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 23:47:23.898" level="INFO">Typing text 'opp' into text field 'q'.</msg>
+<status status="PASS" starttime="20231008 23:47:23.897" endtime="20231008 23:47:25.523"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Search</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 23:47:25.524" level="INFO">Clicking button 'Search'.</msg>
+<status status="PASS" starttime="20231008 23:47:25.523" endtime="20231008 23:47:27.753"/>
+</kw>
+<status status="PASS" starttime="20231008 23:47:21.752" endtime="20231008 23:47:27.753"/>
+</kw>
+<status status="PASS" starttime="20231008 23:47:21.752" endtime="20231008 23:47:27.753"/>
+</test>
+<test id="s1-t18" name="Go to Home Page Again" line="71">
+<kw name="Go to Home Page" library="online-movie-ticket-booking-system-resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Home</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231008 23:47:27.757" level="INFO">Clicking link 'Home'.</msg>
+<status status="PASS" starttime="20231008 23:47:27.756" endtime="20231008 23:47:29.970"/>
+</kw>
+<status status="PASS" starttime="20231008 23:47:27.755" endtime="20231008 23:47:29.970"/>
+</kw>
+<status status="PASS" starttime="20231008 23:47:27.755" endtime="20231008 23:47:29.971"/>
+</test>
+<status status="PASS" starttime="20231008 23:44:02.276" endtime="20231008 23:47:29.972"/>
+</suite>
+<statistics>
+<total>
+<stat pass="18" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="18" fail="0" skip="0" id="s1" name="Online-Movie-Ticket-Booking-System">Online-Movie-Ticket-Booking-System</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
